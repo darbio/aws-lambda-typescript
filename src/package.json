@@ -1,0 +1,15 @@
+{
+  "name": "lambda-typescript-example",
+  "version": "1.0.0",
+  "description": "Example lambda function using typescript",
+  "main": "_testdriver.js",
+  "dependencies": {
+    "aws-sdk": "^2.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Darbyshire",
+  "license": "ISC"
+}
