@@ -8,15 +8,8 @@
 ************************************************/
 
 interface Context {
-    succeed(result: any): any;
-    succeed(result: any): any;
-
-    fail(): any;
-    fail(error: any): any;
-
-    done(): any;
-    done(error: any): any;
-    done(error: any, result: any): any;
-
-    getRemainingTimeInMillis(): any;
+    succeed(result?: string): void;
+    fail(error?: string): void;
+    done(error?: string, result?: string): void;
+    getRemainingTimeInMillis(): number;
 }

@@ -1,10 +1,9 @@
 ﻿export function handler(event, context: Context) {
-    if (event != null) {
-        console.log('event = ' + JSON.stringify(event));
-    }
-    else {
-        console.log('No event object');
+    // Check our parameters
+    if (event == null) {
+        context.fail("No event object");
     }
 
-    context.succeed('Success');
+    // Success
+    context.succeed("Success");
 }
