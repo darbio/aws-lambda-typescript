@@ -8,8 +8,8 @@
 ************************************************/
 
 interface Context {
-    succeed(result?: string): void;
-    fail(error?: string): void;
-    done(error?: string, result?: string): void;
+    succeed(result?: Object): void;
+    fail(error?: Error): void;
+    done(error?: Error, result?: Object): void; // result must be JSON.stringifyable
     getRemainingTimeInMillis(): number;
 }
