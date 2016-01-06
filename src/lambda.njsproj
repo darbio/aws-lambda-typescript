@@ -3,7 +3,7 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>LambdaExample</Name>
+    <Name>lambda</Name>
     <RootNamespace>ParseIncidentsFeed</RootNamespace>
     <StartupFile>_testdriver.js</StartupFile>
     <EnableTypeScript>true</EnableTypeScript>
@@ -37,9 +37,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
   </PropertyGroup>
   <ItemGroup>
-    <Content Include=".gitignore" />
     <Content Include="package.json" />
-    <Content Include="README.md" />
     <Content Include="_sampleEvent.json" />
   </ItemGroup>
   <ItemGroup>
