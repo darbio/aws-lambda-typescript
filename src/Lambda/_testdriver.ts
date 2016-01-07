@@ -20,12 +20,22 @@ var app = require('./app');
 var lambdaEvent: any = JSON.parse(fs.readFileSync(__dirname + '/_sampleEvent.json', 'utf8').trim());
 
 var context: Context = {
+    functionName: null,
+    functionVersion: null,
+    invokedFunctionArn: null,
+    memoryLimitInMB: null,
+    awsRequestId: null,
+    logGroupName: null,
+    logStreamName: null,
+    identity: null,
+    clientContext: null,
+    
     succeed: (result: string) => {
         if (result) {
             console.info(result);
         }
     },
-    done: (error: string, result: string) => {
+    done: (error: Error, result: string) => {
         if (error) {
             console.error(error);
         }
@@ -33,7 +43,7 @@ var context: Context = {
             console.info(result);
         }
     },
-    fail: (error: string) => {
+    fail: (error: Error) => {
         if (error) {
             console.error(error);
         }

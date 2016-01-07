@@ -19,7 +19,7 @@ interface Context {
     logGroupName: string;
     logStreamName: string;
     identity?: CognitoIdentity;
-    clientContext: ClientContext;
+    clientContext?: ClientContext;
     
     // Functions
     succeed(result?: Object): void;
@@ -35,7 +35,7 @@ interface CognitoIdentity {
 
 interface ClientContext {
     client: ClientContextClient;
-    Custom: any;
+    Custom?: any;
     env: ClientContextEnv;
 }
 
