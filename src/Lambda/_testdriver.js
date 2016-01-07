@@ -1,4 +1,4 @@
-﻿/// This is a utility file to help invoke and debug the lambda function. It is not included as part of the
+/// This is a utility file to help invoke and debug the lambda function. It is not included as part of the
 /// bundle upload to Lambda.
 ///
 /// Credentials:
@@ -8,24 +8,20 @@
 /// 
 /// TypeScript References
 /// <reference path="typings/tsd.d.ts" />
-
 // Set the region to the locations of the S3 buckets
-process.env['AWS_REGION'] = 'us-west-2'
-
+process.env['AWS_REGION'] = 'us-west-2';
 var fs = require('fs');
 var app = require('./app');
-
 // Load the sample event to be passed to Lambda. The _sampleEvent.json file can be modified to match
 // what you want Lambda to process on.
-var lambdaEvent: any = JSON.parse(fs.readFileSync('_sampleEvent.json', 'utf8').trim());
-
-var context: Context = {
-    succeed: (result: string) => {
+var lambdaEvent = JSON.parse(fs.readFileSync(__dirname + '/_sampleEvent.json', 'utf8').trim());
+var context = {
+    succeed: function (result) {
         if (result) {
             console.info(result);
         }
     },
-    done: (error: string, result: string) => {
+    done: function (error, result) {
         if (error) {
             console.error(error);
         }
@@ -33,15 +29,15 @@ var context: Context = {
             console.info(result);
         }
     },
-    fail: (error: string) => {
+    fail: function (error) {
         if (error) {
             console.error(error);
         }
     },
-    getRemainingTimeInMillis: () => {
+    getRemainingTimeInMillis: function () {
         // Mocked to be 30 seconds
         return 30000;
     }
 };
-
 app.handler(lambdaEvent, context);
+//# sourceMappingURL=_testdriver.js.map

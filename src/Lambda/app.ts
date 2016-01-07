@@ -5,5 +5,5 @@
     }
 
     // Success
-    context.succeed("Success");
+    context.succeed("Great Success");
 }
