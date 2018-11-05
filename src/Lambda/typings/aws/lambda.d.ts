@@ -13,6 +13,7 @@ interface Context {
     // Properties
     functionName: string;
     functionVersion: string;
+    function_version: string;
     invokedFunctionArn: string;
     memoryLimitInMB: number;
     awsRequestId: string;
@@ -20,7 +21,7 @@ interface Context {
     logStreamName: string;
     identity?: CognitoIdentity;
     clientContext?: ClientContext;
-    
+
     // Functions
     succeed(result?: Object): void;
     fail(error?: Error): void;

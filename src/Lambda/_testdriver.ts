@@ -22,6 +22,7 @@ var lambdaEvent: any = JSON.parse(fs.readFileSync(__dirname + '/_sampleEvent.jso
 var context: Context = {
     functionName: null,
     functionVersion: null,
+    function_version: null,
     invokedFunctionArn: null,
     memoryLimitInMB: null,
     awsRequestId: null,
@@ -29,7 +30,7 @@ var context: Context = {
     logStreamName: null,
     identity: null,
     clientContext: null,
-    
+
     succeed: (result: string) => {
         if (result) {
             console.info(result);
